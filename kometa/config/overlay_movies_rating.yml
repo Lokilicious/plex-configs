@@ -1,0 +1,20 @@
+#templates:
+overlays:
+  rating_highest:
+    overlay:
+      font_color: "#FFFFFF"
+      back_color: "#000000AA"
+      group: rating_text
+      name: text(user_rating)
+      rating_type: user_rating
+      weight: 20
+      font: config/fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 20
+      back_width: 165
+      back_height: 120
+      horizontal_offset: 35
+      horizontal_align: right
+      vertical_offset: 35
+      vertical_align: bottom
+    plex_all: true

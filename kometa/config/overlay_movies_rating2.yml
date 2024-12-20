@@ -1,0 +1,32 @@
+templates:
+  my_rating_template:
+    optional:
+      level
+    overlay:
+      font_color: "#FFFFFF"
+      back_color: "#000000AA"
+      group: rating_text
+      name: text(<<rtng>>)
+      rating_type: user_rating
+      weight: 20
+      font: config/fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 20
+      back_width: 165
+      back_height: 120
+      horizontal_offset: 35
+      horizontal_align: right
+      vertical_offset: 35
+      vertical_align: bottom
+    plex_all: true
+    builder_level: <<level>>
+
+overlays: 
+  rating_highest:
+    template: {name: my_rating_template, rtng: user_rating}
+  
+  rating_highest-season:
+    template: {name: my_rating_template, rtng: 5.0, level: season}
+
+  rating_highest-episode:
+    template: {name: my_rating_template, rtng: user_rating, level: episode}

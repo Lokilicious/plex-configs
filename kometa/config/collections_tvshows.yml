@@ -1,0 +1,84 @@
+collections:
+  EN Only Language Label:
+    builder_level: season
+    build_collection: false
+    item_label: EN
+    plex_all: true
+    filters:
+      episodes:
+        percentage: 50
+        audio_language: English
+        audio_language.not: German 
+  English Only Seasons:
+    builder_level: season
+    plex_search: 
+      all: 
+        season_label: EN
+      sort_by: added.desc
+    sync_mode: sync
+    collection_order: custom
+  Now also available in German:
+    builder_level: season
+    plex_search: 
+      all: 
+        season_label: EN
+      sort_by: added.desc
+    sync_mode: sync
+    collection_order: custom
+    visible_library: true
+    visible_home: true
+    visible_shared: true
+    collection_mode: hide 
+    filters:
+      episodes:
+        percentage: 1
+        audio_language: German
+  Trakt Trending:
+    trakt_chart:
+      chart: trending
+      limit: 8
+    minimum_items: 1
+    schedule: weekly(wednesday|thursday|friday|saturday|sunday)
+    collection_order: custom
+    sync_mode: sync
+    collection_mode: hide
+    name: Trending
+    visible_library: true
+    visible_home: true
+    visible_shared: true
+    sonarr_add_missing: true
+    sonarr_monitor: latest
+    sonarr_search: true
+    item_sonarr_tag.sync: pmm
+    ignore_ids: 
+      - 258541
+      - 295640
+      - 269641
+      - 350071
+      - 75692
+      - 72108
+      - 328687
+      - 337907
+      - 339227
+      - 376837
+      - 76733
+      - 76706
+      - 194031
+  # Remove Overlay Labels Episode:
+  #   build_collection: false
+  #   builder_level: episode
+  #   item_label.remove: Overlay
+  #   plex_search:
+  #     all:
+  #       episode_label: Overlay
+  #       title: One Piece
+  #       year: 1999
+  # Remove Overlay Labels Season:
+  #   build_collection: false
+  #   builder_level: season
+  #   item_label.remove: Overlay
+  #   plex_search:
+  #     all:
+  #       season_label: Overlay
+  #       title: One Piece
+  #       year: 1999

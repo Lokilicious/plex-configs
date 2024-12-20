@@ -1,0 +1,55 @@
+queues:
+  language_queue:
+    - horizontal_offset: 180
+      horizontal_align: right
+      vertical_offset: 35
+      vertical_align: bottom
+    - horizontal_offset: 218
+      horizontal_align: right
+      vertical_offset: 35
+      vertical_align: bottom
+    - horizontal_offset: 256
+      horizontal_align: right
+      vertical_offset: 35
+      vertical_align: bottom
+
+overlays:
+  de:
+    overlay: 
+      name: de   
+      file: config/overlays/flags/de.png
+      text: " "
+      back_width: 60
+      back_height: 120
+      back_color: "#FFFFFF00"
+      queue: language_queue
+      weight: 100
+    plex_search: 
+      all:
+        audio_language: de 
+  en:
+    overlay:    
+      name: en   
+      file: config/overlays/flags/en.png
+      text: " "
+      back_width: 60
+      back_height: 120
+      back_color: "#FFFFFF00"
+      queue: language_queue
+      weight: 80
+    plex_search: 
+      all:
+        audio_language: en 
+  ja:
+    overlay:   
+      name: ja   
+      file: config/overlays/flags/ja.png
+      text: " "
+      back_width: 60
+      back_height: 120
+      back_color: "#FFFFFF00"
+      queue: language_queue
+      weight: 60
+    plex_search: 
+      all:
+        audio_language: ja

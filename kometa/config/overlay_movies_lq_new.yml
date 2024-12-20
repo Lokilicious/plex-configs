@@ -1,0 +1,26 @@
+overlays:
+  low_quality_backdrop:
+    overlay: 
+      name: backdrop
+      back_color: "#C40234"
+      back_height: 100
+      vertical_position: top
+    plex_all: true
+    filters:
+      filepath.regex: 
+      - '(?i)\b(TELESYNC)\b'
+  low_quality:
+    #suppress_overlays:
+    overlay:
+      font_color: "#E8F5F0"
+      name: text(LOW QUALITY!)
+      font: config/fonts/Poppins-Bold.ttf
+      font_size: 70
+      horizontal_offset: 0
+      horizontal_align: center
+      vertical_offset: 20
+      vertical_align: top
+    plex_all: true
+    filters:
+      filepath.regex: 
+      - '(?i)\b(TELESYNC)\b'

@@ -1,0 +1,18 @@
+overlays:
+  low_quality:
+    suppress_overlays:
+    overlay:
+      name: low_quality
+      horizontal_align: right
+      horizontal_offset: 0
+      vertical_align: top
+      vertical_offset: 0
+      file: config/assets/low_quality_banner_small_right.png
+    plex_all: true
+    filters:
+      filepath.regex: 
+      - '(?i)\b(MD)\b'
+      - '(?i)\b(HCS|HC)\b'
+      - '(?i)\b(HDTS|HDTC|TELESYNC)\b'
+      - '\b(TS)\b'
+      - '(?i)\b(HQ|HD)?CAM(Rip)?\b'

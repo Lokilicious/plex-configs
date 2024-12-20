@@ -1,0 +1,299 @@
+libraries:
+  Filme 4k:
+    overlay_files:
+    #- remove_overlays: true
+    #- reapply_overlays: true
+    #- reset_overlays: plex
+    - file: config/overlays/jmxd/gradient_movies.yml   #Top Gradient
+    - default: resolution   #Resolution & Dynamic Range
+      template_variables:
+        file: config/overlays/jmxd/resolution/<<key>><<alt>>.png
+        use_resolution: true
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+        use_edition: false
+        horizontal_offset: 50
+        horizontal_align: left
+        vertical_offset: 50
+        vertical_align: top
+        back_radius: 0
+        back_align: left
+        back_color: '#00000000'
+        back_height: 50
+    - file: config/overlay_languages_movies.yml
+    collection_files:
+    - default: universe
+      template_variables:
+        sort_by: title.asc
+        use_separator: false
+        collection_mode: hide_items
+        exclude:
+        - trek
+    operations:
+      mass_critic_rating_update:
+      - mdb_tomatoes
+      - 5.0
+      mass_audience_rating_update:
+      - mdb_tomatoesaudience
+      - 5.0
+      mass_user_rating_update:
+      - mdb_trakt
+      - 5.0
+      mass_genre_update:
+      - tmdb
+      - ["Unknown"]
+      assets_for_all: true
+  Filme:
+    overlay_files:
+    #- remove_overlays: true
+    #- reapply_overlays: true
+    #- reset_overlays: plex
+    - file: config/overlays/jmxd/gradient_movies.yml   #Top Gradient
+    - default: resolution   #Resolution & Dynamic Range
+      template_variables:
+        file: config/overlays/jmxd/resolution/<<key>><<alt>>.png
+        use_resolution: true
+        use_4k: false
+        use_576p: false
+        use_edition: false
+        horizontal_offset: 50
+        horizontal_align: left
+        vertical_offset: 50
+        vertical_align: top
+        back_radius: 0
+        back_align: left
+        back_color: '#00000000'
+        back_height: 50
+    - file: config/overlay_movies_lq_new.yml
+    - file: config/overlay_languages_movies.yml
+    collection_files:
+    - file: config/collections_movies.yml
+    - default: universe
+      template_variables:
+        sort_by: title.asc
+        use_separator: false
+        collection_mode: hide_items
+        exclude:
+        - trek
+    - default: studio
+      template_variables:
+        sort_by: title.asc
+        use_separator: false
+        collection_mode: hide_items
+        include:
+        - Walt Disney Animation Studios
+        - Walt Disney Pictures
+        - Walt Disney Productions
+        - Pixar
+        addons:
+          Walt Disney Pictures:
+          - Walt Disney Animation Studios
+          - Walt Disney Productions
+          - Pixar
+    - default: director
+      template_variables:
+        sort_by: title.asc
+        use_separator: false
+        include:
+        - Quentin Tarantino
+    - default: seasonal
+      template_variables:
+        schedule_independence: never
+        schedule_thanksgiving: never
+        schedule_memorial: never
+        schedule_labor: never
+    operations:
+      mass_critic_rating_update:
+      - mdb_tomatoes
+      - 5.0
+      mass_audience_rating_update:
+      - mdb_tomatoesaudience
+      - 5.0
+      mass_user_rating_update:
+      - mdb_trakt
+      - 5.0
+      mass_genre_update:
+      - tmdb
+      - ["Unknown"]
+      assets_for_all: true
+  Serien:
+    overlay_files:
+    - file: config/overlays/jmxd/gradient_shows.yml   #Top Gradient
+    - default: resolution   #Resolution & Dynamic Range
+      template_variables:
+        file: config/overlays/jmxd/resolution/<<key>><<alt>>.png
+        use_resolution: true
+        use_4k: false
+        use_edition: false
+        horizontal_offset: 50
+        horizontal_align: left
+        vertical_offset: 50
+        vertical_align: top
+        back_radius: 0
+        back_align: left
+        back_color: '#00000000'
+        back_height: 50
+    - default: resolution   #Resolution & Dynamic Range
+      template_variables:
+        file: config/overlays/jmxd/resolution/<<key>><<alt>>.png
+        use_resolution: true
+        use_4k: false
+        use_edition: false
+        horizontal_offset: 50
+        horizontal_align: left
+        vertical_offset: 50
+        vertical_align: top
+        back_radius: 0
+        back_align: left
+        back_color: '#00000000'
+        back_height: 50
+        builder_level: season
+    - default: resolution   #Resolution & Dynamic Range
+      template_variables:
+        file: config/overlays/jmxd/resolution/<<key>><<alt>>.png
+        use_resolution: true
+        use_4k: false
+        use_edition: false
+        horizontal_offset: 50
+        horizontal_align: left
+        vertical_offset: 50
+        vertical_align: top
+        back_radius: 0
+        back_align: left
+        back_color: '#00000000'
+        back_height: 50
+        builder_level: episode
+    - file: config/overlay_languages_shows.yml
+    collection_files:
+    - file: config/collections_tvshows.yml
+    operations:
+      mass_critic_rating_update:
+      - mdb_tomatoes
+      - 5.0
+      mass_audience_rating_update:
+      - mdb_tomatoesaudience
+      - 5.0
+      mass_user_rating_update:
+      - mdb_trakt
+      - 5.0
+      mass_genre_update:
+      - tvdb
+      - ["Unknown"]
+      assets_for_all: true
+settings:
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 0
+  create_asset_folders: false
+  prioritize_assets: true
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: true
+  show_missing_episode_assets: false
+  show_asset_not_needed: false
+  sync_mode: append
+  minimum_items: 1
+  default_collection_order: release
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_filtered: false
+  show_options: false
+  show_missing: false
+  show_missing_assets: true
+  save_report: false
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_user: all
+  playlist_exclude_user:
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+  show_unconfigured: true
+  playlist_exclude_users:
+  run_order:
+  - operations
+  - metadata
+  - collections
+  - overlays
+  overlay_artwork_filetype: jpg
+  overlay_artwork_quality: 95
+webhooks:                        # Can be individually specified per library as well
+  error: notifiarr
+  version: notifiarr
+  run_start: notifiarr
+  run_end: notifiarr
+  changes: notifiarr
+  delete: notifiarr
+notifiarr:
+  apikey: XXX
+plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
+  url: http://plex.lan
+  token: XXX
+  timeout: 360
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+  db_cache: 1024
+  verify_ssl:
+tmdb:                            # REQUIRED for the script to run
+  apikey: XXX
+  language: de
+  cache_expiration: 60
+  region:
+tautulli:                        # Can be individually specified per library as well
+  url: http://server.lan:8181
+  apikey: XXX
+trakt: # Check https://kometa.wiki/en/latest/config/authentication/?h=trakt for how to authenticate with trakt
+  client_id: XXX
+  client_secret: XXX
+  pin:
+  authorization:
+mdblist:
+  apikey: XXX
+  cache_expiration: 60
+radarr:
+  url: http://radarr.lan
+  token: XXX
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor: true
+  availability: cinemas
+  quality_profile: HD Bluray + WEB
+  tag: kometa
+  search: false
+  root_folder_path: /storage/movies
+  ignore_cache: true
+  radarr_path:
+  plex_path:
+  monitor_existing: false
+sonarr:
+  url: http://sonarr.lan
+  token: XXX
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor: all
+  series_type: standard
+  season_folder: true
+  quality_profile: WEB-1080p
+  tag: kometa
+  search: false
+  root_folder_path: /storage/tvshows
+  ignore_cache: true
+  language_profile:
+  cutoff_search: false
+  sonarr_path:
+  plex_path:
+  monitor_existing: false

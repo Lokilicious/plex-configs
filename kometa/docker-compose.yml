@@ -1,0 +1,39 @@
+services:
+  kometa:
+    image: kometateam/kometa:latest
+    container_name: kometa
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Europe/Vienna
+      - KOMETA_CONFIG=/config/config.yml #optional
+      - KOMETA_TIME=05:00 #optional
+      #- KOMETA_RUN=True #optional
+      #- KOMETA_TEST=True #optional
+      - KOMETA_DEBUG=True
+      - KOMETA_NO_MISSING=False #optional
+      #- KOMETA_COLLECTIONS_ONLY=True
+      #- KOMETA_OVERLAYS_ONLY=True
+      #- KOMETA_RUN_LIBRARIES=Serien
+      - KOMETA_NO_COUNTDOWN=True
+    volumes:
+      - ./config:/config
+    restart: on-failure:3
+  imagemaid:
+    image: kometateam/imagemaid:develop
+    container_name: imagemaid
+    environment:
+      - TZ=Europe/Vienna
+      - PLEX_PATH=/plex
+      - SCHEDULE=07:00|weekly(monday)
+      - PHOTO_TRANSCODER=True
+      - EMPTY_TRASH=True
+      - CLEAN_BUNDLES=True
+      - OPTIMIZE_DB=True
+      - PLEX_URL=http://plex.lan
+      - PLEX_TOKEN=XXX
+      - MODE=remove
+    volumes:
+      - ./config/imagemaid:/config
+      - "./config/plex/Library/Application Support/Plex Media Server:/plex"
+    restart: unless-stopped
