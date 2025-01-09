@@ -123,8 +123,6 @@ sync_gdrive:
       location: /posters/sync/solen-others
     - id: 1YEuS1pulJAfhKm4L8U9z5-EMtGl-d2s7 # solens own work
       location: /posters/sync/solen
-    - id: 1EGLan80GJXSqOgqQGa-Q51OmwCrbyZE5
-      location: /posters/sync/custom
     - id: 1KnwxzwBUQzQyKF1e24q_wlFqcER9xYHM # Sahara - Contains homemade
       location: /posters/sync/sahara
     - id: 1alseEnUBjH6CjXh77b5L4R-ZDGdtOMFr # Lion City Gaming - Contains both homemade and TPDB
