@@ -1,0 +1,13 @@
+services:
+  daps:
+  image: drazzilb08/daps:latest
+  container_name: daps
+  environment:
+    - PUID=1000
+    - PGID=100
+    - TZ=Europe/Vienna
+  volumes:
+    - ./config:/config
+    - ./config/daps/posters:/posters
+    - ./config/kometa/assets:/kometa
+  restart: on-failure:3
