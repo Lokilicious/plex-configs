@@ -98,7 +98,6 @@ sync_gdrive:
   # This script is meant to be used in conjunction with Plex-Meta-Manager, however, it can be used on its own.
   # This is a script base of this one: https://discord.com/channels/492590071455940612/1124032073557086258/1126226814629576858
   log_level: info # debug, info, warning, error, critical
-  log_level: info # debug, info, warning, error, critical
   # Client ID for rclone usually ends with .apps.googleusercontent.com
   client_id: X # Client ID for rclone usually ends with .apps.googleusercontent.com
   client_secret: X # Client Secret for rclone, usually starts with GOCSPX-
