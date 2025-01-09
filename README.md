@@ -4,6 +4,10 @@
 2. ImageMaid ✔️
 3. DAPS 🔜
 
+## How it looks:
+
+![Screenshot_2024-05-15_at_08 01 51](https://github.com/user-attachments/assets/2e7eef6f-4f7f-41f5-ac7b-5e2c7b407cd5)
+
 ## Kometa
 
 What my config does:
