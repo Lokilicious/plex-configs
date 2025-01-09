@@ -297,7 +297,6 @@ poster_renamerr:
   # The order from lowest to highest priority
   # The order is 100% personal preference
   source_dirs: 
-    - /posters/sync/custom
     - /posters/sync/solen-others
     - /posters/sync/majorgiant-others
     - /posters/sync/spartacus-others
